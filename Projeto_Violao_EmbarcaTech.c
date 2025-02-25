@@ -36,7 +36,7 @@ static float last_valid_frequency = 0;
 static uint32_t last_update_display = 0;       
 
 
-#define SAMPLE_RATE_PADRAO 8500 // Média das sample rates
+#define SAMPLE_RATE_PADRAO 8700 // Média das sample rates
 #define BUFFER_SIZE 1500   // Número de amostras para análise
 #define FILTER_SIZE 5  // Ajuste para otimizar a suavização
 
@@ -250,7 +250,7 @@ uint16_t apply_filtro_media_mobile(uint16_t *buffer, int tamanho) {
 
 void display_note(float frequency) {
     // Ignorar leituras fora da faixa e manter a última frequência válida
-    if (frequency >= 60 && frequency <= 370) {
+    if (frequency >= 60 && frequency <= 400) {
         last_valid_frequency = frequency;
         last_update_display = time_us_32() / 1000;
     }
